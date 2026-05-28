@@ -3,258 +3,512 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jungfrau Connect | Gondolas</title>
 
-<title>Jungfrau Connect</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:'Inter', sans-serif;
-background:#F8F7F4;
-color:#1F1F1F;
-line-height:1.6;
+    font-family:'Inter', sans-serif;
+    background:#F8F7F4;
+    color:#1F1F1F;
 }
 
-.hero{
-height:70vh;
-background:
-linear-gradient(rgba(0,0,0,0.45),
-rgba(0,0,0,0.45)),
-url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070');
+header{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(8,26,49,0.35), rgba(8,26,49,0.65)),
+    url("https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=2070");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
 
-background-size:cover;
-background-position:center;
+nav{
+    background:#0B2745;
+    padding:22px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:800;
+    font-size:24px;
+}
 
-padding:40px;
-color:white;
+.logo span{
+    background:#F8C400;
+    color:#0B2745;
+    padding:8px;
+    border-radius:10px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+}
+
+.btn-yellow{
+    background:#F8C400;
+    color:#0B2745;
+    padding:14px 24px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:800;
+    display:inline-block;
+}
+
+.hero-content{
+    padding:120px 8% 60px;
+    max-width:780px;
+}
+
+.hero-content h4{
+    color:#F8C400;
+    font-size:20px;
+    margin-bottom:15px;
 }
 
 .hero-content h1{
-font-size:70px;
-margin-bottom:20px;
+    font-size:72px;
+    line-height:0.95;
+    margin-bottom:25px;
+    font-weight:800;
 }
 
 .hero-content p{
-font-size:20px;
-max-width:700px;
-margin:auto;
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:35px;
+}
+
+.hero-features{
+    margin:40px 8%;
+    background:rgba(11,39,69,0.88);
+    border-radius:22px;
+    padding:28px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.feature{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+}
+
+.icon{
+    font-size:34px;
+    color:#F8C400;
 }
 
 section{
-padding:100px 10%;
+    padding:90px 8%;
 }
 
 .section-title{
-font-size:40px;
-margin-bottom:50px;
-text-align:center;
+    text-align:center;
+    margin-bottom:50px;
 }
 
-.map img{
-width:100%;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+.section-title h5{
+    color:#D99A00;
+    font-size:14px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.section-title h2{
+    font-size:44px;
+    color:#0B2745;
+}
+
+.section-title p{
+    margin-top:12px;
+    color:#52606E;
+}
+
+.map-box{
+    background:white;
+    border-radius:28px;
+    padding:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+}
+
+.map-box img{
+    width:100%;
+    border-radius:20px;
+    display:block;
 }
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:28px;
 }
 
 .card{
-background:white;
-padding:35px;
-border-radius:25px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-transition:0.3s;
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,0.10);
+    transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+    transform:translateY(-7px);
 }
 
-.card h3{
-margin-bottom:15px;
-font-size:24px;
+.card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-background:white;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-margin-top:40px;
+.card-content{
+    padding:26px;
 }
 
-th{
-background:#2E3A4A;
-color:white;
-padding:20px;
-text-align:left;
+.card-content h3{
+    color:#0B2745;
+    font-size:24px;
+    margin-bottom:12px;
 }
 
-td{
-padding:20px;
-border-bottom:1px solid #ddd;
+.card-content p{
+    color:#52606E;
+    margin-bottom:20px;
 }
 
-.accessibility{
-background:#EEF2F2;
+.card-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
+}
+
+.small-btn{
+    background:#0B2745;
+    color:white;
+    padding:10px 16px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+}
+
+.hours{
+    background:#EEF2F2;
+}
+
+.hours-box{
+    background:white;
+    border-radius:24px;
+    padding:35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+.hours-box h3{
+    font-size:28px;
+    color:#0B2745;
+}
+
+.time{
+    background:#FFF4D6;
+    color:#0B2745;
+    padding:18px 28px;
+    border-radius:12px;
+    font-size:22px;
+    font-weight:800;
+}
+
+.cta{
+    background:#0B2745;
+    color:white;
+    border-radius:24px;
+    padding:40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.cta h2{
+    font-size:34px;
 }
 
 footer{
-background:#1F1F1F;
-color:white;
-text-align:center;
-padding:40px;
+    background:#071B31;
+    color:white;
+    padding:50px 8%;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+footer h3{
+    color:#F8C400;
+    margin-bottom:12px;
 }
 
 @media(max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
 
-.hero-content h1{
-font-size:45px;
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-content h1{
+        font-size:48px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .hours-box,
+    .cta{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
 }
-
-.hero{
-height:60vh;
-}
-
-.section-title{
-font-size:32px;
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<header class="hero">
+<header>
+    <nav>
+        <div class="logo">
+            <span>🚠</span>
+            JUNGRAU CONNECT
+        </div>
 
-<div class="hero-content">
+        <ul>
+            <li><a href="#map">MAP</a></li>
+            <li><a href="#gondolas">GONDOLAS</a></li>
+            <li><a href="#hours">HOURS</a></li>
+            <li><a href="#accessibility">ACCESSIBILITY</a></li>
+        </ul>
 
-<h1>Jungfrau Connect</h1>
+        <a href="#gondolas" class="btn-yellow">PLAN YOUR RIDE</a>
+    </nav>
 
-<p>
-Smart alpine transportation system connecting trains,
-gondolas and mountain destinations across the Jungfrau Region.
-</p>
+    <div class="hero-content">
+        <h4>DISCOVER THE ALPS</h4>
+        <h1>GONDOLAS<br>JUNGFRAU REGION</h1>
+        <p>
+            Scenic cable car connections designed to take visitors to the most iconic
+            mountain destinations in the Swiss Alps.
+        </p>
+        <a href="#gondolas" class="btn-yellow">EXPLORE GONDOLAS</a>
+    </div>
 
-</div>
+    <div class="hero-features">
+        <div class="feature">
+            <div class="icon">⛰️</div>
+            <div>
+                <h3>Amazing Views</h3>
+                <p>Panoramic landscapes across the Jungfrau Region.</p>
+            </div>
+        </div>
 
+        <div class="feature">
+            <div class="icon">🛡️</div>
+            <div>
+                <h3>Safe & Reliable</h3>
+                <p>Modern gondola services with clear information.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🕘</div>
+            <div>
+                <h3>Daily Service</h3>
+                <p>Open every day from 9:00 AM to 5:00 PM.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🌿</div>
+            <div>
+                <h3>Sustainable</h3>
+                <p>Mountain mobility in harmony with nature.</p>
+            </div>
+        </div>
+    </div>
 </header>
 
-<section class="map">
+<section id="map">
+    <div class="section-title">
+        <h5>REGION OVERVIEW</h5>
+        <h2>Jungfrau Gondola Map</h2>
+        <p>General visual reference of the main mountain connections.</p>
+    </div>
 
-<h2 class="section-title">Jungfrau Region Map</h2>
+    <div class="map-box">
+        <img src="jungfrau-map.png" alt="Jungfrau Region Map">
+    </div>
+</section>
 
-<img src="jungfrau-map.png" alt="Jungfrau Map">
+<section id="gondolas">
+    <div class="section-title">
+        <h5>OUR GONDOLA NETWORK</h5>
+        <h2>Destinations by Gondola</h2>
+        <p>Four main gondola connections designed for tourism, nature and alpine experiences.</p>
+    </div>
 
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?q=80&w=1200" alt="First Top of Adventure">
+            <div class="card-content">
+                <h3>First Top of Adventure</h3>
+                <p>Adventure destination with panoramic views, mountain activities and access to hiking routes.</p>
+                <div class="card-bottom">
+                    <span>🚠 Gondola</span>
+                    <a class="small-btn" href="#hours">View Hours</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200" alt="Eigernordwand">
+            <div class="card-content">
+                <h3>Eigernordwand</h3>
+                <p>Connection near the famous Eiger North Face, ideal for dramatic alpine views.</p>
+                <div class="card-bottom">
+                    <span>🚠 Cable Car</span>
+                    <a class="small-btn" href="#hours">View Hours</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200" alt="Männlichen">
+            <div class="card-content">
+                <h3>Männlichen</h3>
+                <p>Perfect mountain destination for families, hiking and panoramic views over the valley.</p>
+                <div class="card-bottom">
+                    <span>🚠 Gondola</span>
+                    <a class="small-btn" href="#hours">View Hours</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200" alt="Pfingstegg">
+            <div class="card-content">
+                <h3>Pfingstegg</h3>
+                <p>A peaceful mountain destination close to Grindelwald, ideal for nature and scenic views.</p>
+                <div class="card-bottom">
+                    <span>🚠 Cable Car</span>
+                    <a class="small-btn" href="#hours">View Hours</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hours" id="hours">
+    <div class="hours-box">
+        <div>
+            <h3>Service Hours</h3>
+            <p>All gondola and cable car services operate every day of the year.</p>
+        </div>
+
+        <div class="time">09:00 AM — 05:00 PM</div>
+    </div>
+</section>
+
+<section id="accessibility">
+    <div class="section-title">
+        <h5>ACCESSIBILITY</h5>
+        <h2>Designed for Everyone</h2>
+        <p>Clear information, strong contrast and simple navigation for all visitors.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-content">
+                <h3>♿ Accessible Stations</h3>
+                <p>Information is organized to support visitors with reduced mobility.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>🔎 Clear Navigation</h3>
+                <p>Simple sections, visible buttons and easy-to-read route information.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>📱 Responsive Design</h3>
+                <p>The page adapts to desktop and mobile devices.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section>
-
-<h2 class="section-title">Gondolas & Cable Cars</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>First Top of Adventure</h3>
-<p>Daily service from 09:00 to 17:00.</p>
-</div>
-
-<div class="card">
-<h3>Eigernordwand</h3>
-<p>Daily service from 09:00 to 17:00.</p>
-</div>
-
-<div class="card">
-<h3>Männlichen</h3>
-<p>Daily service from 09:00 to 17:00.</p>
-</div>
-
-<div class="card">
-<h3>Pfingstegg</h3>
-<p>Daily service from 09:00 to 17:00.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Train Connections</h2>
-
-<table>
-
-<tr>
-<th>Route</th>
-<th>Schedule</th>
-</tr>
-
-<tr>
-<td>Interlaken Ost → Grindelwald Terminal → Grindelwald Bahnhof</td>
-<td>Departures at :17 and :47 every hour</td>
-</tr>
-
-<tr>
-<td>Grindelwald Bahnhof → Kleine Scheidegg → Grindelwald Bahnhof</td>
-<td>Departures at :00 and :30 every hour</td>
-</tr>
-
-</table>
-
-</section>
-
-<section class="accessibility">
-
-<h2 class="section-title">Accessibility</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Wheelchair Access</h3>
-<p>Accessible stations and transportation.</p>
-</div>
-
-<div class="card">
-<h3>Clear Signage</h3>
-<p>Simple and intuitive navigation system.</p>
-</div>
-
-<div class="card">
-<h3>Responsive Design</h3>
-<p>Optimized for mobile and desktop devices.</p>
-</div>
-
-</div>
-
+    <div class="cta">
+        <h2>Your journey to the mountains starts here.</h2>
+        <a href="#gondolas" class="btn-yellow">VIEW GONDOLAS</a>
+    </div>
 </section>
 
 <footer>
+    <div>
+        <h3>Jungfrau Connect</h3>
+        <p>Smart alpine mobility for the Jungfrau Region.</p>
+    </div>
 
-<p>Jungfrau Connect © 2026</p>
+    <div>
+        <h3>Gondolas</h3>
+        <p>First Top of Adventure</p>
+        <p>Eigernordwand</p>
+        <p>Männlichen</p>
+        <p>Pfingstegg</p>
+    </div>
 
+    <div>
+        <h3>Contact</h3>
+        <p>Jungfrau Region, Switzerland</p>
+        <p>info@jungfrauconnect.ch</p>
+    </div>
 </footer>
 
 </body>
